@@ -1,7 +1,7 @@
 use cosmwasm_std::{
     from_json,
     testing::{mock_info, MockApi, MockQuerier, MockStorage},
-    Addr, Coin, Deps, DepsMut, Empty, Env, HexBinary, MessageInfo, OwnedDeps, Response,
+    Addr, Coin, Deps, DepsMut, Empty, Env, HexBinary, MessageInfo, OwnedDeps, Response, Uint128,
 };
 use hpl_interface::{
     hook::PostDispatchMsg,
@@ -54,7 +54,7 @@ impl IGP {
                 owner: owner.to_string(),
                 gas_token: gas_token.to_string(),
                 beneficiary: beneficiary.to_string(),
-                default_gas_usage: 250_000,
+                default_gas_usage: Uint128::from(250_000u128),
             },
         )
     }

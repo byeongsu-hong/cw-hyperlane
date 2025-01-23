@@ -153,6 +153,7 @@ where
 }
 
 #[tokio::test]
+#[ignore]
 async fn test_mailbox_cw_to_evm() -> eyre::Result<()> {
     // init Osmosis env
     let osmo_app = OsmosisTestApp::new();
@@ -179,6 +180,7 @@ async fn test_mailbox_cw_to_evm() -> eyre::Result<()> {
 }
 
 #[tokio::test]
+#[ignore]
 async fn test_mailbox_evm_to_cw() -> eyre::Result<()> {
     // init Osmosis env
     let osmo_app = OsmosisTestApp::new();

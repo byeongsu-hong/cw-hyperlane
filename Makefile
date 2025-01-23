@@ -24,7 +24,7 @@ optimize:
 	docker run --rm -v "$(PWD)":/code \
 		--mount type=volume,source="$(BASE)_cache",target=/code/target \
 		--mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
-		cosmwasm/optimizer:0.15.0
+		cosmwasm/optimizer:0.16.1
 
 optimize-fast:
 	cargo cw-optimizoor

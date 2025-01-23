@@ -46,7 +46,7 @@ pub fn instantiate(
 
     GAS_TOKEN.save(deps.storage, &msg.gas_token)?;
     HRP.save(deps.storage, &msg.hrp)?;
-    DEFAULT_GAS_USAGE.save(deps.storage, &msg.default_gas_usage)?;
+    DEFAULT_GAS_USAGE.save(deps.storage, &msg.default_gas_usage.into())?;
 
     Ok(Response::new().add_event(
         new_event("initialize")

@@ -42,7 +42,7 @@ async fn test_cw20_colleteral() -> eyre::Result<()> {
     let osmo = cw::setup_env(
         &osmo_app,
         |app, coins| app.init_account(coins).unwrap(),
-        None::<&str>,
+        Some("../artifacts/"),
         "osmo",
         DOMAIN_OSMO,
         &[TestValidators::new(DOMAIN_EVM, 5, 3)],
@@ -115,7 +115,7 @@ async fn test_cw20_bridged() -> eyre::Result<()> {
     let osmo = cw::setup_env(
         &osmo_app,
         |app, coins| app.init_account(coins).unwrap(),
-        None::<&str>,
+        Some("../artifacts/"),
         "osmo",
         DOMAIN_OSMO,
         &[TestValidators::new(DOMAIN_EVM, 5, 3)],
@@ -167,7 +167,7 @@ async fn test_native_collateral(#[case] denom: &str) -> eyre::Result<()> {
     let osmo = cw::setup_env(
         &osmo_app,
         |app, coins| app.init_account(coins).unwrap(),
-        None::<&str>,
+        Some("../artifacts/"),
         "osmo",
         DOMAIN_OSMO,
         &[TestValidators::new(DOMAIN_EVM, 5, 3)],
@@ -240,7 +240,7 @@ async fn test_native_bridged(#[case] denom: &str) -> eyre::Result<()> {
     let osmo = cw::setup_env(
         &osmo_app,
         |app, coins| app.init_account(coins).unwrap(),
-        None::<&str>,
+        Some("../artifacts/"),
         "osmo",
         DOMAIN_OSMO,
         &[TestValidators::new(DOMAIN_EVM, 5, 3)],

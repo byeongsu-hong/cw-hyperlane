@@ -18,6 +18,8 @@
 
 ## Prerequisites
 
+- rename
+- foundry
 - rust (wasm32-wasm32-unknown target)
 - go 1.20 or higher
 - llvm-cov

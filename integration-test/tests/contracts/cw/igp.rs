@@ -1,3 +1,4 @@
+use cosmwasm_std::Uint128;
 use hpl_interface::{
     igp::{self, oracle::RemoteGasDataConfig},
     router::{DomainRouteSet, RouterMsg},
@@ -36,7 +37,7 @@ impl Igp {
                     owner: owner.address(),
                     gas_token: self.gas_token,
                     beneficiary: self.beneficiary,
-                    default_gas_usage: 25_000,
+                    default_gas_usage: Uint128::from(25_000u128),
                 },
                 Some(deployer.address().as_str()),
                 Some("cw-hpl-igp"),

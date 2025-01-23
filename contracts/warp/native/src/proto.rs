@@ -13,8 +13,21 @@ pub struct MsgCreateDenom {
 impl From<MsgCreateDenom> for CosmosMsg {
     fn from(v: MsgCreateDenom) -> Self {
         CosmosMsg::Stargate {
-            type_url: "/osmosis.tokenfactory.v1beta1.MsgCreateDenom".to_string(),
+            type_url: MsgCreateDenom::type_url(),
             value: Binary(v.encode_to_vec()),
+        }
+    }
+}
+
+impl MsgCreateDenom {
+    fn type_url() -> String {
+        #[cfg(feature = "osmosis")]
+        {
+            "/osmosis.tokenfactory.v1beta1.MsgCreateDenom".to_string()
+        }
+        #[cfg(feature = "injective")]
+        {
+            "/injective.tokenfactory.v1beta1.MsgCreateDenom".to_string()
         }
     }
 }
@@ -60,8 +73,21 @@ pub struct MsgMint {
 impl From<MsgMint> for CosmosMsg {
     fn from(v: MsgMint) -> Self {
         CosmosMsg::Stargate {
-            type_url: "/osmosis.tokenfactory.v1beta1.MsgMint".to_string(),
+            type_url: MsgMint::type_url(),
             value: Binary(v.encode_to_vec()),
+        }
+    }
+}
+
+impl MsgMint {
+    fn type_url() -> String {
+        #[cfg(feature = "osmosis")]
+        {
+            "/osmosis.tokenfactory.v1beta1.MsgMint".to_string()
+        }
+        #[cfg(feature = "injective")]
+        {
+            "/injective.tokenfactory.v1beta1.MsgMint".to_string()
         }
     }
 }
@@ -77,8 +103,21 @@ pub struct MsgBurn {
 impl From<MsgBurn> for CosmosMsg {
     fn from(v: MsgBurn) -> Self {
         CosmosMsg::Stargate {
-            type_url: "/osmosis.tokenfactory.v1beta1.MsgBurn".to_string(),
+            type_url: MsgBurn::type_url(),
             value: Binary(v.encode_to_vec()),
+        }
+    }
+}
+
+impl MsgBurn {
+    fn type_url() -> String {
+        #[cfg(feature = "osmosis")]
+        {
+            "/osmosis.tokenfactory.v1beta1.MsgBurn".to_string()
+        }
+        #[cfg(feature = "injective")]
+        {
+            "/injective.tokenfactory.v1beta1.MsgBurn".to_string()
         }
     }
 }
@@ -142,8 +181,21 @@ pub struct MsgSetDenomMetadata {
 impl From<MsgSetDenomMetadata> for CosmosMsg {
     fn from(v: MsgSetDenomMetadata) -> Self {
         CosmosMsg::Stargate {
-            type_url: "/osmosis.tokenfactory.v1beta1.MsgSetDenomMetadata".to_string(),
+            type_url: MsgSetDenomMetadata::type_url(),
             value: Binary(v.encode_to_vec()),
+        }
+    }
+}
+
+impl MsgSetDenomMetadata {
+    fn type_url() -> String {
+        #[cfg(feature = "osmosis")]
+        {
+            "/osmosis.tokenfactory.v1beta1.MsgSetDenomMetadata".to_string()
+        }
+        #[cfg(feature = "injective")]
+        {
+            "/injective.tokenfactory.v1beta1.MsgSetDenomMetadata".to_string()
         }
     }
 }

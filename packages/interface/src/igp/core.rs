@@ -1,5 +1,5 @@
 use cosmwasm_schema::{cw_serde, QueryResponses};
-use cosmwasm_std::{Addr, HexBinary, Uint256};
+use cosmwasm_std::{Addr, HexBinary, Uint128, Uint256};
 
 use crate::{
     hook::{HookQueryMsg, PostDispatchMsg},
@@ -16,7 +16,7 @@ pub struct InstantiateMsg {
     pub owner: String,
     pub gas_token: String,
     pub beneficiary: String,
-    pub default_gas_usage: u128,
+    pub default_gas_usage: Uint128,
 }
 
 #[cw_serde]
